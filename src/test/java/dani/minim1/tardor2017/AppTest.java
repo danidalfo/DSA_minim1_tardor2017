@@ -1,38 +1,37 @@
 package dani.minim1.tardor2017;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
+import org.junit.After;
+import org.junit.Before;
+
+import static junit.framework.TestCase.assertEquals;
+
+
+public class AppTest
 {
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
+    @Before
+    public void setUp()
     {
-        super( testName );
+        ProductManagerImpl.getInstance();
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
+    @After
+    public void tearDown()
     {
-        return new TestSuite( AppTest.class );
+        ProductManagerImpl.getInstance().reiniciarSingleton();
     }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
+    @org.junit.Test
+    public void realizarunpedido()
     {
-        assertTrue( true );
+
+        ProductManagerImpl.getInstance().AddUsuario(new Usuario(1,"Juan","juan@yahoo.es"));
+        ProductManagerImpl.getInstance().AddProducto(new Producto());
+        ProductManagerImpl.getInstance().servirPedido();
+
+
     }
+
+
+
 }

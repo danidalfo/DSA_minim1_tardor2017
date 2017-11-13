@@ -3,6 +3,7 @@ package dani.minim1.tardor2017;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.util.HashMap;
+import java.util.Arrays;
 import java.util.Vector;
 
 
@@ -25,13 +26,12 @@ public class ProductManagerImpl implements ProductManager {
     HashMap<String, Usuario> usuarios;
     Vector<Producto> productos;
 
-
     public Boolean AddUsuario(Usuario usuario) {
         if (usuarios.containsKey(usuario.getNombre())) {
             logger.error("addUsuario: El usuario ya existe");
             return false;
         } else {
-            logger.error("addUsuario: Usuario añadido");
+            logger.info("addUsuario: Usuario añadido");
             usuarios.put(usuario.getNombre(), usuario);
             return true;
         }
@@ -40,9 +40,29 @@ public class ProductManagerImpl implements ProductManager {
 
     }
 
-    public Vector<Producto> getProductos() {
-        return productos;
+    public void AddProducto (Producto producto){
+        productos.add(producto);
     }
+
+   // public Producto[] ListaProductosDescendente() {
+     //   Arrays.sort(arrayProductos);
+       // return arrayProductos;
+   // }
+
+    public Vector<Pedido> pedidosRealizados (Usuario usuario){
+        return usuario.getPedidos();
+    }
+
+    public void servirPedido (Vector<Producto> productos,Usuario usuario){
+logger.info("Servir productos a usuario:"+usuario);
+        usuario.HacerPedido(productos);
+    }
+
+    public void reiniciarSingleton()
+    {
+        instance = null;
+    }
+
 }
 
 

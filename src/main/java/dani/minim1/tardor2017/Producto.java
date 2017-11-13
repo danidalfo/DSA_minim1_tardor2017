@@ -6,6 +6,7 @@ public class Producto implements Comparable<Producto> {
     private String nombre;
     private int precio;
 
+
     // Constructores
 
     public Producto (int id,String nombre,int precio) {
@@ -15,6 +16,30 @@ public class Producto implements Comparable<Producto> {
     }
 
     public Producto() {}
+
+    public int getId() {
+        return id;
+    }
+
+    public int getPrecio() {
+        return precio;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
 
     @Override
     public int compareTo(Producto o) {

@@ -1,38 +1,39 @@
 package dani.minim1.tardor2017;
 
 import java.util.HashMap;
+import java.util.Vector;
 
 public class Pedido {
 
     int idPedido;
-    HashMap<Integer,Producto> productospedidos;
+    Vector<Producto> productos;
 
 
     public Pedido (int idPedido) {
 
         this.idPedido = idPedido;
-        productospedidos = new HashMap<Integer, Producto>();
+        productos = new Vector<Producto>();
 
     }
 
     public Pedido () {
-        productospedidos = new HashMap<Integer, Producto>();
+        productos = new Vector<Producto>();
     }
 
 
     public int getID () {return idPedido;}
 
-    public HashMap<Integer,Producto> getProductospedidos (){
+    public Vector<Producto> getProductospedidos (){
 
-        return productospedidos;
+        return productos;
     }
 
     public void setIdPedido (int idPedido){
         this.idPedido=idPedido;
     }
 
-    public void setProductospedidos (HashMap<Integer,Producto> productospedidos){
-        this.productospedidos=productospedidos;
+    public void setProductospedidos (Vector<Producto> productos){
+        this.productos=productos;
     }
 
 
