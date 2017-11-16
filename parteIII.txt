@@ -1,0 +1,7 @@
+Una tabla carta de productos.
+Una tabla pedidos pendientes.
+Una tabla pedidos realizados.
+Una tabla usuarios.
+
+Tanto la tabla pedidos pendientes como la tabla pedidos realizados tendrian un campo id producto y id usuario que lo
+relacionaria con los id de las tablas productos y usuario.
