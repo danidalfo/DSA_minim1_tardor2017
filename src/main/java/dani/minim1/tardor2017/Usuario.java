@@ -7,22 +7,22 @@ public class Usuario {
     private int id;
     private String nombre;
     private String email;
-    private Vector<Producto> productos;
     private Vector<Pedido> pedidos;
 
 
         // Constructors
 
+
         public Usuario (int id,String nombre,String email) {
             this.id = id;
             this.nombre = nombre;
-            productos = new Vector<Producto>();
+            pedidos = new Vector<Pedido>();
             this.email = email;
         }
 
         public Usuario()
         {
-            productos = new Vector<Producto>();
+            pedidos = new Vector<Pedido>();
         }
 
         // Getters i setters
@@ -47,47 +47,18 @@ public class Usuario {
             this.email = email;
         }
 
-        public void setProductos(Vector<Producto> productos) {
-        this.productos = productos;
-    }
+        public void addPedido(Pedido o) {
 
-        public boolean addProducto(Producto o) {
-            if(o!=null)
-            {
-                productos.add(o);
-                return true;
-            }
-            return false;
-        }
-
-        public boolean addPedido(Pedido o) {
-        if(o!=null)
-        {
             pedidos.add(o);
-            return true;
-        }
-        return false;
+
+
     }
 
-        public Vector<Producto> getProductos() {
-            return productos;
-        }
 
         public Vector<Pedido> getPedidos() {
         return pedidos;
     }
 
-        public void HacerPedido (Vector<Producto> productos){
-
-            Pedido pedido = new Pedido();
-            pedido.setProductospedidos(productos);
-            this.pedidos.add(pedido);
-            int i;
-            for (i=0;i<productos.size();i++){
-                this.addProducto(productos.elementAt(i));
-            }
-
-        }
 
     @Override
         public String toString() {

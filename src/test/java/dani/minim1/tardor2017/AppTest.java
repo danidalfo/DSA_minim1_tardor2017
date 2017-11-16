@@ -27,7 +27,7 @@ public class AppTest
 
         ProductManagerImpl.getInstance().AddUsuario(new Usuario(1,"Juan","juan@yahoo.es"));
         ProductManagerImpl.getInstance().AddProducto(new Producto());
-        ProductManagerImpl.getInstance().servirPedido();
+       // ProductManagerImpl.getInstance().servirPedido();
 
 
     }

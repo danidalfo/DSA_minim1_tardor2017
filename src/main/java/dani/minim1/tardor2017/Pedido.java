@@ -5,36 +5,34 @@ import java.util.Vector;
 
 public class Pedido {
 
-    int idPedido;
-    Vector<Producto> productos;
+    Vector<Comanda> productos;
+    Usuario usuario;
 
-
-    public Pedido (int idPedido) {
-
-        this.idPedido = idPedido;
-        productos = new Vector<Producto>();
-
-    }
 
     public Pedido () {
-        productos = new Vector<Producto>();
+        productos = new Vector<Comanda>();
     }
 
 
-    public int getID () {return idPedido;}
 
-    public Vector<Producto> getProductospedidos (){
+    public Vector<Comanda> getProductospedidos (){
 
         return productos;
     }
 
-    public void setIdPedido (int idPedido){
-        this.idPedido=idPedido;
+    public void setProductospedidos(Vector<Comanda> productos) {
+        this.productos = productos;
     }
 
-    public void setProductospedidos (Vector<Producto> productos){
-        this.productos=productos;
+    public Usuario getUsuario() {
+        return usuario;
     }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+
 
 
 

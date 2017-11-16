@@ -1,25 +1,22 @@
 package dani.minim1.tardor2017;
 
-public class Producto implements Comparable<Producto> {
+public class Producto {
 
-    private int id;
     private String nombre;
     private int precio;
+    private int ventas;
 
 
     // Constructores
 
-    public Producto (int id,String nombre,int precio) {
-        this.id = id;
+    public Producto (String nombre,int precio,int ventas) {
+
         this.nombre = nombre;
         this.precio = precio;
+        this.ventas = ventas;
     }
 
     public Producto() {}
-
-    public int getId() {
-        return id;
-    }
 
     public int getPrecio() {
         return precio;
@@ -29,9 +26,7 @@ public class Producto implements Comparable<Producto> {
         return nombre;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    public int getVentas() { return ventas;}
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -41,14 +36,7 @@ public class Producto implements Comparable<Producto> {
         this.precio = precio;
     }
 
-    @Override
-    public int compareTo(Producto o) {
-        if (precio < o.precio) {
-            return -1;
-        }
-        if (precio > o.precio) {
-            return 1;
-        }
-        return 0;
-    }
+    public void setVentas(int ventas){this.ventas=ventas;}
+
+
 }
