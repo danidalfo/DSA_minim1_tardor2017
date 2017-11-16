@@ -5,9 +5,9 @@ import java.util.Vector;
 
 public interface ProductManager {
 
-    public void servirPedido();
+    public Pedido servirPedido();
 
-    public void hacerPedido(Pedido pedido);
+    public boolean hacerPedido(Pedido pedido);
 
     public Vector<Pedido> pedidosRealizados (Usuario usuario);
 

@@ -37,7 +37,7 @@ public class ProductManagerImpl implements ProductManager {
         return instance;
     }
 
-    public void servirPedido() {
+    public Pedido servirPedido() {
         logger.info("Servint pedido");
 
         Pedido pedido = ColaPedidos.poll();
@@ -54,9 +54,10 @@ public class ProductManagerImpl implements ProductManager {
         Usuario usuario = usuarios.get(pedido.getUsuario().getNombre());
         usuario.addPedido(pedido);
 
+        return pedido;
     }
 
-    public void hacerPedido(Pedido pedido) {
+    public boolean hacerPedido(Pedido pedido) {
 
         logger.info("Se hace un pedido");
 
@@ -72,6 +73,8 @@ public class ProductManagerImpl implements ProductManager {
         usuario.addPedido(pedido);
 
         ColaPedidos.add(pedido);
+
+        return true;
 
     }
 
